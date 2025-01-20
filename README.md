@@ -4,7 +4,9 @@
 
 Github repository for paper: [*VoxEval: Benchmarking the Knowledge Understanding Capabilities of End-to-End Spoken Language Models*](https://arxiv.org/abs/2501.04962)
 
-VoxEval is a novel speech question-answering benchmark specifically designed to assess SLMs' knowledge understanding through purely speech-based interactions.
+Also check out our survey paper at [*Recent Advances in Speech Language Models: A Survey*](https://arxiv.org/abs/2410.03751)!
+
+**VoxEval** is a novel speech question-answering benchmark specifically designed to assess SLMs' knowledge understanding through purely speech-based interactions.
 
 Below are the three highlights of our VoxEval benchmark:
 - End-to-end speech-based evaluation: Both input and output are audio-based.
@@ -29,13 +31,6 @@ Below is the layout of the dataset folder. `all_fewshot_examples` folder contain
   # │           ├── ...
   # │       ├── echo
   # │       ├── ...
-  # │   ├── math_CoT_fewshot
-  # │       ├── alloy
-  # │           ├── college_mathematics_dev_4o
-  # │               ├── XXX.mp3
-  # │               ├── ...
-  # │           ├── elementary_mathematics_dev_4o
-  # │           ├── high_school_mathematics_dev_4o
   # │   ├── test
   # │       ├── alloy (different settings)
   # │           ├── abstract_algebra_4o (different subjects)
