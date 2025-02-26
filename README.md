@@ -6,6 +6,10 @@ Github repository for paper: [*VoxEval: Benchmarking the Knowledge Understanding
 
 Also check out our survey paper at [*Recent Advances in Speech Language Models: A Survey*](https://arxiv.org/abs/2410.03751)!
 
+## News
+2025/02/26: We release the Chain-of-Thought few-shot prompts for three mathematical reasoning subjects (Elementary Math, High School Math, and College Math) in VoxEval.
+
+## Info
 **VoxEval** is a novel speech question-answering benchmark specifically designed to assess SLMs' knowledge understanding through purely speech-based interactions.
 
 Below are the three highlights of our VoxEval benchmark:
