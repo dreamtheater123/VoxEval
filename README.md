@@ -7,7 +7,8 @@ Github repository for paper: [*VoxEval: Benchmarking the Knowledge Understanding
 Also check out our survey paper at [*Recent Advances in Speech Language Models: A Survey*](https://arxiv.org/abs/2410.03751)!
 
 ## News
-**2025/02/26:** We release the Chain-of-Thought few-shot prompts for three mathematical reasoning subjects (Elementary Math, High School Math, and College Math) in VoxEval.
+- **2025/03/23:** We release the evaluation code of VoxEval benchmark.
+- **2025/02/26:** We release the Chain-of-Thought few-shot prompts for three mathematical reasoning subjects (Elementary Math, High School Math, and College Math) in VoxEval.
 
 ## Info
 **VoxEval** is a novel speech question-answering benchmark specifically designed to assess SLMs' knowledge understanding through purely speech-based interactions.
@@ -43,6 +44,45 @@ Below is the layout of the dataset folder. `all_fewshot_examples` folder contain
   # │           ├── ...
   # │       ├── echo
   # │       ├── ...
+```
+
+## Evaluation Pipeline
+The `VoxEval_evaluation.py` script contains the evaluation framework for VoxEval. It allows you to integrate and assess any SLMs within it. To evaluate a specific SLM, follow these steps:
+1. Clone the repository of the SLM you wish to evaluate and download the model checkpoints provided by its authors.
+2. Set up a conda environment as per the instructions given by the SLM's authors.
+3. Create a file within the SLM's codebase that includes a function named `e2e_evaluation(input_audio, sample_rate)`. This function should take audio samples and their sampling rate (loaded using torchaudio) as input. The input audio acts as an audio prompt, and the function should return the SLM's generated response audio.
+4. Begin the evaluation process using the command provided below.
+```shell
+python VoxEval_evaluation.py \
+    --source_path /path/to/VoxEval data/test \
+    --fewshot_path /path/to/VoxEval data/all_fewshot_examples \
+    --whisper_model_path /path/to/whisper-large-v3 \
+    --target_path /path/to/save/the/evaluation/results \
+    --eval_slm_path /path/to/target SLM codebase \
+    --e2e_eval_file file_name_containing_the_e2e_evaluation_function \
+    --timbre timbre \
+    --shots num_shots \
+    --prompt_mode regular_or_CoT \
+    --cut_audio False
+```
+
+### GLM-4-Voice Evaluation (Example)
+We give an example to evaluate GLM-4-Voice using VoxEval
+1. Copy `./examples/VoxEval_eval_glm.py` into the original repository of [GLM-4-Voice](https://github.com/THUDM/GLM-4-Voice).
+2. Set up the GLM conda environment and activate it.
+3. Start the evaluation using the command below (change the paths to your own):
+```shell
+python VoxEval_evaluation.py \
+    --source_path /nfsdata/cuiwenqian/VoxEval/test \
+    --fewshot_path /nfsdata/cuiwenqian/VoxEval/all_fewshot_examples \
+    --whisper_model_path /nfsdata/cuiwenqian/hf_model_ckpt/whisper-large-v3 \
+    --target_path /nfsdata/cuiwenqian/GLM-4-Voice/VoxEval_evaluation \
+    --eval_slm_path /nfsdata/cuiwenqian/GLM-4-Voice \
+    --e2e_eval_file VoxEval_eval_glm \
+    --timbre alloy \
+    --shots 5 \
+    --prompt_mode regular \
+    --cut_audio False
 ```
 
 ## Evaluation results of existing end-to-end Spoken Language Models
