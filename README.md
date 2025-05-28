@@ -2,6 +2,8 @@
 [![Hugging Face%20-%20VoxEval](https://img.shields.io/badge/🤗%20Hugging%20Face%20-%20VoxEval-blue)](https://huggingface.co/datasets/qqjz/VoxEval)
 [![arXiv](https://img.shields.io/badge/arXiv-2501.04962-red)](https://arxiv.org/abs/2501.04962)
 
+**VoxEval has been accepted by ACL 2025 main conference!**
+
 Github repository for paper: [*VoxEval: Benchmarking the Knowledge Understanding Capabilities of End-to-End Spoken Language Models*](https://arxiv.org/abs/2501.04962)
 
 Also check out our survey paper at [*Recent Advances in Speech Language Models: A Survey*](https://arxiv.org/abs/2410.03751)!
@@ -104,9 +106,6 @@ python VoxEval_evaluation.py \
 | Other Env Acoustics  | 0.0001        | 0.0434    | 0.2019        | 0.1051    | 0.3728          |
 | **Underlying Text LMs** | **Llama-7B** | **Llama-7B** | **Llama-2-7B** | **Helium-7B** | **GLM-4-9B** |
 | Text MMLU            | 0.3510        | 0.3510    | 0.4530        | 0.5430    | 0.7470          |
-
-## What's Next
-- The VoxEval evaluation code will be released soon.
 
 ## License
 The dataset is licensed under the Creative Commons Attribution 4.0.
