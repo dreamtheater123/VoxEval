@@ -2,7 +2,7 @@
 [![Hugging Face%20-%20VoxEval](https://img.shields.io/badge/🤗%20Hugging%20Face%20-%20VoxEval-blue)](https://huggingface.co/datasets/qqjz/VoxEval)
 [![arXiv](https://img.shields.io/badge/arXiv-2501.04962-red)](https://arxiv.org/abs/2501.04962)
 
-**VoxEval has been accepted by ACL 2025 main conference!**
+**🎉🎉🎉VoxEval has been accepted by ACL 2025 main conference!**
 
 Github repository for paper: [*VoxEval: Benchmarking the Knowledge Understanding Capabilities of End-to-End Spoken Language Models*](https://arxiv.org/abs/2501.04962)
 
